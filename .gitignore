@@ -3,7 +3,7 @@
 /.idea
 /out
 /target
-goit-bot-project.iml
+/goit-bot-project.iml
 # Log file
 *.log
 
