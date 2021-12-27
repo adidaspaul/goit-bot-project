@@ -16,9 +16,13 @@ public class Scheduler {
             alert.getResponseFromBank(userSettings, Message message);
         }
     };
+    long time = 0l;
+    switch(userSettings.getNotificationTime){
+        case(9):
+    }
     public void schedule(TimerTask task,Date notification, long period) {
         Date notification = new Date();
-        notification.setHour(userSettings.getNotificationTime);
+        notification.setTime();
 
         timer.schedule(task, notification, 84600000);
     }
