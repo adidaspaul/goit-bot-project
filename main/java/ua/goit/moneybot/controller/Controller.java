@@ -8,7 +8,6 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.MessageEntity;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ua.goit.moneybot.model.Scheduler;
 import ua.goit.moneybot.model.UserService;
@@ -16,8 +15,8 @@ import ua.goit.moneybot.model.UserService;
 import java.util.Optional;
 
 public class Controller extends TelegramLongPollingBot {
-    Keyboards keyboards = new Keyboards();
-    UserService userService = UserService.create();
+    private Keyboards keyboards = new Keyboards();
+    private UserService userService = UserService.create();
 
 
     @Override

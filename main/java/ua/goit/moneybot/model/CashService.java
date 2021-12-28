@@ -1,13 +1,9 @@
 package ua.goit.moneybot.model;
 
-import java.awt.image.AreaAveragingScaleFilter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Timer;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -46,9 +42,12 @@ public class CashService {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            Runnable monobankRateFlushRunnable = () -> monobankRateFlush();
+            if (executor.getActiveCount() != 0) {
+                executor.shutdownNow();
+            }
+            executor.schedule(monobankRateFlushRunnable, 5, TimeUnit.MINUTES);
         }
-        Runnable monobankRateFlushRunnable = () -> monobankRateFlush();
-        executor.schedule(monobankRateFlushRunnable, 5, TimeUnit.MINUTES);
         ArrayList<BankResponse> bankResponse = new ArrayList<>();
         bankResponse.addAll(monobankResponse);
         return bankResponse;
@@ -65,9 +64,12 @@ public class CashService {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            Runnable privatBankRateFlushRunnable = () -> privatBankRateFlush();
+            if (executor.getActiveCount() != 0) {
+                executor.shutdownNow();
+            }
+            executor.schedule(privatBankRateFlushRunnable, 5, TimeUnit.MINUTES);
         }
-        Runnable privatBankRateFlushRunnable = () -> privatBankRateFlush();
-        executor.schedule(privatBankRateFlushRunnable, 5, TimeUnit.MINUTES);
         ArrayList<BankResponse> bankResponse = new ArrayList<>();
         bankResponse.addAll(privatBankResponse);
         return bankResponse;
@@ -84,9 +86,12 @@ public class CashService {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            Runnable nbuRateFlushRunnable = () -> nbuRateFlush();
+            if (executor.getActiveCount() != 0) {
+                executor.shutdownNow();
+            }
+            executor.schedule(nbuRateFlushRunnable, 5, TimeUnit.MINUTES);
         }
-        Runnable nbuRateFlushRunnable = () -> nbuRateFlush();
-        executor.schedule(nbuRateFlushRunnable, 5, TimeUnit.MINUTES);
         ArrayList<BankResponse> bankResponse = new ArrayList<>();
         bankResponse.addAll(nbuResponse);
         return bankResponse;
