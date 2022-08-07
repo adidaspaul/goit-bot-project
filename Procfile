@@ -1,1 +1,1 @@
-worker: sh target/bin/goit-bot-project
+worker: java Application.java
