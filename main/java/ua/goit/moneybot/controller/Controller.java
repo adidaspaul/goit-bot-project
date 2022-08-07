@@ -23,13 +23,13 @@ public class Controller extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "@goittestingbot_bot";
+        return "@adik_crncy_bot";
 
     }    //есл хотите тестить сюда вбиваете свои значения
 
     @Override
     public String getBotToken() {
-        return "5003580560:AAE9p7Ohh5rFGGTomwmqFBqp5H35nm0NySs";  // сюда свой токен
+        return "5461811617:AAEZDLZ3u-OGjHG84ufbD_Tsm8NlP_Xf_Zg";  // сюда свой токен
     }
 
 
