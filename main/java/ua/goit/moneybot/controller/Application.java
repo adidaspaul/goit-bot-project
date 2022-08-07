@@ -13,6 +13,6 @@ public class Application {
 
     public static void main(String[] args) throws TelegramApiException {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
-        telegramBotsApi.registerBot(Controller);
+        telegramBotsApi.registerBot(bot);
     }
 }
