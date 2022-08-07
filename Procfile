@@ -1,1 +1,1 @@
-worker: main/java/ua/goit/moneybot/controller/Application.java
+worker: sh target/bin/goit-bot-project
