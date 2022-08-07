@@ -23,7 +23,7 @@ public class Controller extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "@adik_crncy_bot";
+        return "adik_crncy_bot";
 
     }    //есл хотите тестить сюда вбиваете свои значения
 
